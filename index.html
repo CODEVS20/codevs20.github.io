@@ -4,242 +4,212 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CodeVS Apps — Игры, Викторины и Приложения</title>
-  <meta name="description" content="Официальный сайт разработчика CodeVS: игры, викторины и утилиты для Android. Ссылки на RuStore, контакты, политика и соглашение." />
+  <meta name="description" content="Официальный сайт разработчика CodeVS: игры, викторины и утилиты для Android (RuStore, VK Ads)." />
   <style>
     :root{
-      --bg:#0b0e12; --card:#121821; --muted:#94a3b8; --text:#e8eef6; --accent:#43b581; --accent-2:#60a5fa; --border:#223047;
+      --bg:#0a0f14; --panel:#0f1622; --card:#111a28; --text:#e7edf5; --muted:#9bb0c9;
+      --accent:#4ade80; --accent-2:#60a5fa; --border:#1f2b3c; --chip:#1a2738;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Ubuntu,'Noto Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
     a{color:var(--accent-2);text-decoration:none}
-    a:hover{opacity:.9}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(11,14,18,.7);backdrop-filter: blur(8px);border-bottom:1px solid var(--border);z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:10;background:rgba(10,15,20,.65);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:grid;place-items:center;font-weight:800}
-    .brand h1{font-size:18px;margin:0}
-    nav a{padding:8px 12px;border-radius:10px}
-    nav a:hover{background:#111a25}
-
-    .hero{display:grid;gap:16px;padding:56px 0}
-    .hero h2{font-size:36px;line-height:1.15;margin:0}
-    .hero p{color:var(--muted);margin:0}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-    .btn{background:var(--accent);color:#051014;border:1px solid #0e2f24;padding:10px 16px;border-radius:12px;font-weight:700}
-    .btn.secondary{background:#192330;color:var(--text);border:1px solid var(--border)}
-
-    .section{margin:12px 0 36px}
-    .section h3{font-size:22px;margin:0 0 12px}
-
+    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:grid;place-items:center;font-weight:900;color:#08131b}
+    nav a{padding:10px 12px;border-radius:10px} nav a:hover{background:var(--chip)}
+    .hero{display:grid;gap:14px;padding:48px 0}
+    .hero h1{font-size:40px;margin:0;line-height:1.15}
+    .hero p{margin:0;color:var(--muted)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#052016;border:1px solid #0e2f24;padding:10px 16px;border-radius:12px;font-weight:700}
+    .btn.secondary{background:var(--chip);color:var(--text);border:1px solid var(--border)}
+    .section{margin:8px 0 34px}
+    .section h2{margin:0 0 12px;font-size:22px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;gap:16px;align-items:center}
-    .card .icon{width:64px;height:64px;border-radius:14px;flex:0 0 64px;background:#0e1420;border:1px solid var(--border);display:grid;place-items:center;font-weight:800}
-    .card h4{margin:0 0 6px;font-size:18px}
-    .meta{color:var(--muted);font-size:14px;margin:0 0 10px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
-    .tag{font-size:12px;color:#a6b7d6;border:1px solid var(--border);border-radius:999px;padding:4px 10px}
-
-    .two-col{display:grid;grid-template-columns:1fr;gap:16px}
-    .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
-
-    footer{border-top:1px solid var(--border);margin-top:36px}
-    .foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px 0;color:var(--muted)}
-
-    @media(min-width:680px){
-      .hero h2{font-size:48px}
-      .card{grid-column:span 6}
-      .two-col{grid-template-columns:1fr 1fr}
-    }
-    @media(min-width:980px){
-      .card{grid-column:span 4}
-    }
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center}
+    .card .icon{width:64px;height:64px;border-radius:14px;background:#0e1624;border:1px solid var(--border);display:grid;place-items:center;font-weight:800;color:#8ab4ff}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .meta{margin:0 0 10px;color:var(--muted);font-size:14px}
+    .tag{padding:4px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--border);color:#bcd0ea;font-size:12px;margin-right:8px}
+    .actions{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .rustore{background:#2563eb;color:#fff;border:none;padding:10px 14px;border-radius:12px;font-weight:700}
+    .columns{display:grid;grid-template-columns:1fr;gap:16px}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
+    footer{border-top:1px solid var(--border)}
+    .foot{padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap}
+    @media(min-width:720px){.hero h1{font-size:56px}.card{grid-column:span 6}.columns{grid-template-columns:1fr 1fr}}
+    @media(min-width:1000px){.card{grid-column:span 4}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">CV</div>
-        <h1>CodeVS Apps</h1>
-      </div>
-      <nav>
-        <a href="#apps">Приложения</a>
-        <a href="#quizzes">Викторины</a>
-        <a href="#about">О нас</a>
-        <a href="#contact">Контакты</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="brand"><div class="logo">CV</div><div><strong>CodeVS Apps</strong></div></div>
+    <nav>
+      <a href="#apps">Приложения</a>
+      <a href="#quizzes">Викторины</a>
+      <a href="#about">О нас</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Игры, викторины и утилиты для Android</h1>
+    <p>Официальный сайт разработчика. Все проекты доступны в RuStore и поддерживают монетизацию через VK Ads.</p>
+    <div class="cta">
+      <a class="btn" href="#apps">Смотреть приложения</a>
+      <a class="btn secondary" href="app-ads.txt">Проверка app-ads.txt</a>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Игры, викторины и утилиты для Android</h2>
-      <p>Официальный сайт разработчика. Здесь собраны все проекты с прямыми ссылками на RuStore. Поддерживаем рекламу VK Ads и регулярные обновления.</p>
-      <div class="cta">
-        <a class="btn" href="#apps">Смотреть приложения</a>
-        <a class="btn secondary" href="#contact">Связаться с нами</a>
-      </div>
-    </section>
-
-    <section id="apps" class="section">
-      <h3>Приложения и игры</h3>
-      <div class="grid">
-        <article class="card">
-          <div class="icon">TT</div>
-          <div>
-            <h4>Скачать Видео с TikTok</h4>
-            <p class="meta">Загрузчик видео без водяных знаков. Быстро, удобно, бесплатно.</p>
-            <span class="tag">Утилиты</span>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://www.rustore.ru/catalog/app/dev.appnova77.tiktokdownloader" target="_blank" rel="noopener">Скачать в RuStore</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="icon">FM</div>
-          <div>
-            <h4>Игра Слияние Фруктов</h4>
-            <p class="meta">Соединяй одинаковые фрукты и создавай новые комбинации.</p>
-            <span class="tag">Казуальные</span>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://www.rustore.ru/catalog/app/dev.appnova77.fruitmerge" target="_blank" rel="noopener">Скачать в RuStore</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="icon">OF</div>
-          <div>
-            <h4>Игры без интернета</h4>
-            <p class="meta">Коллекция лёгких офлайн-игр — играйте где угодно.</p>
-            <span class="tag">Офлайн</span>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://www.rustore.ru/catalog/app/dev.appnova77.offlinegames" target="_blank" rel="noopener">Скачать в RuStore</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="icon">BG</div>
-          <div>
-            <h4>Игра Шарики Бесплатная</h4>
-            <p class="meta">Классическая головоломка: собирай шарики, набирай очки и побеждай!</p>
-            <span class="tag">Головоломки</span>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://www.rustore.ru/catalog/app/com.bubble.colourmaru" target="_blank" rel="noopener">Скачать в RuStore</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="quizzes" class="section">
-      <h3>Викторины и обучение</h3>
-      <div class="grid">
-        <article class="card">
-          <div class="icon">Q1</div>
-          <div>
-            <h4>Викторина. Вопросы, ответы и объяснения</h4>
-            <p class="meta">Проверь знания в разных областях — от истории до науки.</p>
-            <span class="tag">Обучение</span>
-          </div>
-          <div class="actions"><a class="btn" href="https://www.rustore.ru/catalog/app/dev.quizapp.questions" target="_blank" rel="noopener">Скачать</a></div>
-        </article>
-        <article class="card">
-          <div class="icon">Q2</div>
-          <div>
-            <h4>Викторина: играй, чтобы учиться (Quiz One)</h4>
-            <p class="meta">Играй и учись — соревнуйся с друзьями и прокачивай эрудицию.</p>
-            <span class="tag">Обучение</span>
-          </div>
-          <div class="actions"><a class="btn" href="https://www.rustore.ru/catalog/app/dev.quizapp.learn" target="_blank" rel="noopener">Скачать</a></div>
-        </article>
-        <article class="card">
-          <div class="icon">Q3</div>
-          <div>
-            <h4>Викторина без интернета</h4>
-            <p class="meta">Играй офлайн, без подключения и рекламы.</p>
-            <span class="tag">Офлайн</span>
-          </div>
-          <div class="actions"><a class="btn" href="https://www.rustore.ru/catalog/app/dev.quizapp.offline" target="_blank" rel="noopener">Скачать</a></div>
-        </article>
-        <article class="card">
-          <div class="icon">QB</div>
-          <div>
-            <h4>Quiz бои для телефона</h4>
-            <p class="meta">Угадывай страны, столицы, флаги и побеждай!</p>
-            <span class="tag">Соревнования</span>
-          </div>
-          <div class="actions"><a class="btn" href="https://www.rustore.ru/catalog/app/dev.quizapp.quizbattle" target="_blank" rel="noopener">Скачать</a></div>
-        </article>
-        <article class="card">
-          <div class="icon">WC</div>
-          <div>
-            <h4>Мировые столицы</h4>
-            <p class="meta">Проверь свои знания географии — угадай столицу каждой страны.</p>
-            <span class="tag">География</span>
-          </div>
-          <div class="actions"><a class="btn" href="https://www.rustore.ru/catalog/app/dev.quizapp.worldcapitals" target="_blank" rel="noopener">Скачать</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" class="section two-col">
-      <div class="panel">
-        <h3>О студии</h3>
-        <p>Мы небольшая команда, которая делает простые и полезные приложения. Ставим во главу угла скорость, стабильность и приватность пользователей. Все проекты проходят модерацию RuStore и поддерживают монетизацию через VK Ads.</p>
-        <ul>
-          <li>✔ Регулярные обновления</li>
-          <li>✔ Поддержка на русском и английском</li>
-          <li>✔ Никаких лишних разрешений</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Политика и соглашение</h3>
-        <p>Мы не собираем персональные данные. Интернет используется только для загрузки контента и показа рекламы VK Ads. Приложения предоставляются «как есть».</p>
-        <div class="actions">
-          <a class="btn secondary" href="#privacy">Политика</a>
-          <a class="btn secondary" href="#terms">Соглашение</a>
+  <section id="apps" class="section">
+    <h2>Приложения и игры</h2>
+    <div class="grid">
+      <!-- 1 -->
+      <article class="card">
+        <div class="icon">TT</div>
+        <div>
+          <h3>Скачать Видео с TikTok</h3>
+          <p class="meta">Загрузчик видео без водяных знаков. Быстро, удобно, бесплатно.</p>
+          <span class="tag">Утилиты</span>
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h3>Контакты</h3>
-      <div class="panel">
-        <p><strong>Email:</strong> support.appdev@gmail.com</p>
-        <p><strong>Telegram:</strong> <a href="https://t.me/AppDevSupport" target="_blank" rel="noopener">@AppDevSupport</a></p>
-        <p><strong>VK:</strong> <a href="https://vk.com/" target="_blank" rel="noopener">vk.com/idYOURID</a></p>
-      </div>
-    </section>
-
-    <section id="privacy" class="section">
-      <h3>Политика конфиденциальности</h3>
-      <div class="panel">
-        <p>Мы не запрашиваем и не обрабатываем персональные данные пользователей. Приложения используют сеть для загрузки контента и показа рекламы. Данные не передаются третьим лицам, кроме случаев, предусмотренных законом. По вопросам удаления связанных данных обращайтесь на <a href="mailto:support.appdev@gmail.com">support.appdev@gmail.com</a>.</p>
-      </div>
-    </section>
-
-    <section id="terms" class="section">
-      <h3>Пользовательское соглашение</h3>
-      <div class="panel">
-        <p>Используя приложения, вы соглашаетесь соблюдать законодательство вашей страны и правила платформ. Функционал предоставляется «как есть» без гарантий. Разработчик не несёт ответственности за потери, вызванные некорректным использованием, сбоями устройств или сервисов третьих лиц. При нарушениях доступ может быть ограничен.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container foot">
-      <span>© <span id="y"></span> CodeVS Apps</span>
-      <a href="#apps">Наверх ↑</a>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.devapply.downloadtiktok" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <!-- 2 -->
+      <article class="card">
+        <div class="icon">FM</div>
+        <div>
+          <h3>Игра слияние фруктов бесплатно</h3>
+          <p class="meta">Соединяй одинаковые фрукты и создавай новые комбинации.</p>
+          <span class="tag">Казуальные</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.yslynifru.marbesbslynrus" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <!-- 3 -->
+      <article class="card">
+        <div class="icon">OF</div>
+        <div>
+          <h3>Игры без интернета Move Ball</h3>
+          <p class="meta">Коллекция лёгких офлайн-игр — играйте где угодно.</p>
+          <span class="tag">Офлайн</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.movieball.rusmoveballtri" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <!-- 4 -->
+      <article class="card">
+        <div class="icon">BG</div>
+        <div>
+          <h3>Игра Шарики Бесплатная - Bubble Colours</h3>
+          <p class="meta">Классическая головоломка: собирай шарики, набирай очки и побеждай!</p>
+          <span class="tag">Головоломки</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.bubble.colourmarru" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <section id="quizzes" class="section">
+    <h2>Викторины и обучение</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">Q1</div>
+        <div>
+          <h3>Викторина. Вопросы, ответы и объяснения.</h3>
+          <p class="meta">Проверь знания в разных областях — от истории до науки.</p>
+          <span class="tag">Обучение</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.codevs.quizappmozg" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <article class="card">
+        <div class="icon">Q2</div>
+        <div>
+          <h3>Викторина: играй, чтобы учиться Quiz One</h3>
+          <p class="meta">Играй и учись — соревнуйся с друзьями и прокачивай эрудицию.</p>
+          <span class="tag">Обучение</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.worktime.oneliklerrost" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <article class="card">
+        <div class="icon">Q3</div>
+        <div>
+          <h3>Викторина без интернета</h3>
+          <p class="meta">Играй офлайн, без подключения.</p>
+          <span class="tag">Офлайн</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.worktime.qviznewbolo" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <article class="card">
+        <div class="icon">QB</div>
+        <div>
+          <h3>Quiz бои для телефона</h3>
+          <p class="meta">Угадывай страны, столицы, флаги и побеждай!</p>
+          <span class="tag">Соревнования</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.worktime.oboiqudlytel" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+      <article class="card">
+        <div class="icon">WC</div>
+        <div>
+          <h3>Мировые столицы</h3>
+          <p class="meta">Проверь знания географии — угадай столицу каждой страны.</p>
+          <span class="tag">География</span>
+        </div>
+        <div class="actions"><a class="rustore" href="https://www.rustore.ru/catalog/app/com.worktime.isfoninsher" target="_blank" rel="noopener">Скачать в RuStore</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="section columns">
+    <div class="panel">
+      <h2>О студии</h2>
+      <p>Мы небольшая команда, которая делает простые и полезные приложения. Все проекты проходят модерацию RuStore и поддерживают монетизацию через VK Ads.</p>
+      <ul>
+        <li>✔ Регулярные обновления</li>
+        <li>✔ Поддержка на русском и английском</li>
+        <li>✔ Минимум разрешений</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Политика и соглашение</h2>
+      <p>Мы не собираем персональные данные. Интернет используется только для загрузки контента и показа рекламы VK Ads. Приложения предоставляются «как есть».</p>
+      <p><a href="#privacy">Политика конфиденциальности</a> • <a href="#terms">Пользовательское соглашение</a></p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Контакты</h2>
+    <div class="panel">
+      <p><strong>Email:</strong> codevs2000@gmail.com</p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/AppDevSupport" target="_blank" rel="noopener">@serian278</a></p>
+      <p><strong>VK:</strong> <a href="https://vk.com/" target="_blank" rel="noopener">vk.com/id859880582</a></p>
+    </div>
+  </section>
+
+  <section id="privacy" class="section">
+    <h2>Политика конфиденциальности</h2>
+    <div class="panel">
+      <p>Мы не запрашиваем и не обрабатываем персональные данные пользователей. Приложения используют сеть для загрузки контента и показа рекламы. По вопросам удаления данных обращайтесь на <a href="mailto:codevs2000@gmail.com">codevs2000@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section id="terms" class="section">
+    <h2>Пользовательское соглашение</h2>
+    <div class="panel">
+      <p>Используя приложения, вы соглашаетесь с правилами платформ. Функционал предоставляется «как есть» без гарантий. Разработчик не несёт ответственности за потери, вызванные некорректным использованием, сбоями устройств или сервисов третьих лиц.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <span>© <span id="y"></span> CodeVS Apps</span>
+    <a href="#apps">Наверх ↑</a>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
